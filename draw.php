@@ -10,6 +10,8 @@ if ($_REQUEST['submit']) {
 
   # Validate data
   list($data, $success) = validateData($x, $y, $data);
+  # list($data, $success) = array($data, 1);
+
   if (!$success) {
     print "<script>$data</script>";
     return;

@@ -45,7 +45,11 @@ print <<<EOF
 
     <div style='padding:8px;color:#222'>
     YouTube video walkthrough: <a href=https://youtu.be/t1aXuJkmTg8>https://youtu.be/t1aXuJkmTg8</a><BR>
-    Source code: <a href=https://github.com/techleadhd/bigcanvasdemo>https://github.com/techleadhd/bigcanvasdemo/</a>
+    Source code: <a href=https://github.com/techleadhd/bigcanvasdemo>https://github.com/techleadhd/bigcanvasdemo/</a><BR>
+<BR>
+Looking for more coding tips? <BR>
+Join ex-Google/ex-Facebook engineers at
+    <a href=http://techinterviewpro.com>http://techinterviewpro.com</a> for interview prep to FANG companies.
     </div>
 
     <div id=mycanvasWrapper>

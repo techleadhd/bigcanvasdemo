@@ -31,6 +31,7 @@ $(document).ready(function () {
       let coord = key.split(",");
       let json = data[key];
       let pixelData = JSON.parse(json);
+      clearGrid(coord);
       for (let subkey in pixelData) {
         let subcoord = subkey.split(",");
         let color = pixelData[subkey];
@@ -40,7 +41,7 @@ $(document).ready(function () {
   });
 
   // Draw grid.
-  ctx.strokeStyle = 'rgba(0,0,0,0.25';
+  ctx.strokeStyle = '#cccccc';
   for (let i = 0; i < DIMENSION * REPEATSX; ++i) {
     if (i % DIMENSION != 0) { continue; }
     x = i * PIXELSIZE;
@@ -84,6 +85,17 @@ $(document).ready(function () {
 
     let pixel = [Math.floor(e.offsetX / (PIXELSIZE * DIMENSION)), Math.floor(e.offsetY / (PIXELSIZE * DIMENSION))];
     window.location = "draw.php?x=" + pixel[0] + "&y=" + pixel[1];
+  }
+
+  function clearGrid(coord) {
+    let coordX = parseInt(coord[0]);
+    let coordY = parseInt(coord[1]);
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(coordX * DIMENSION * PIXELSIZE, coordY * DIMENSION * PIXELSIZE,
+      PIXELSIZE * DIMENSION, PIXELSIZE * DIMENSION);
+    ctx.fillStyle = '#cccccc';
+    ctx.strokeRect(coordX * DIMENSION * PIXELSIZE, coordY * DIMENSION * PIXELSIZE,
+      PIXELSIZE * DIMENSION, PIXELSIZE * DIMENSION);
   }
 
   function fillPixel(coord, subcoord, color) {

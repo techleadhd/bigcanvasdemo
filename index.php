@@ -43,6 +43,11 @@ print <<<EOF
 <body>
     <h2>Big Canvas Demo</h2>
 
+    <div style='padding:8px;color:#222'>
+    YouTube video walkthrough: <a href=https://youtu.be/t1aXuJkmTg8>https://youtu.be/t1aXuJkmTg8</a><BR>
+    Source code: <a href=https://github.com/techleadhd/bigcanvasdemo>https://github.com/techleadhd/bigcanvasdemo/</a>
+    </div>
+
     <div id=mycanvasWrapper>
         <canvas id=mycanvas></canvas>
     </div>

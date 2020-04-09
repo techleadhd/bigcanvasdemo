@@ -17,9 +17,9 @@ filename = sys.argv[3]
 f = open(filename, 'r')
 value = "\n".join(f.readlines())
 data = {
-  unicode(key) : unicode(value)
+  unicode('data') : unicode(value)
 }
 
-db.collection(u'app').document(u'grid').update(data)
+db.collection(u'app').document(unicode(key)).set(data)
 
 print 1

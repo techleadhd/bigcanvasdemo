@@ -25,11 +25,15 @@ $(document).ready(function () {
   firebase.initializeApp(firebaseConfig);
   let db = firebase.firestore();
 
-  db.collection('app').doc('grid').onSnapshot(function (doc) {
-    let data = doc.data();
-    for (let key in data) {
+  db.collection('app').onSnapshot(function (grid) {
+    for(let change of grid.docChanges()) {
+      if (!change.doc) continue;
+      let key = change.doc.id;
+      let data = change.doc.data().data;
+      if (key == 'grid') continue;
+
       let coord = key.split(",");
-      let json = data[key];
+      let json = data;
       let pixelData = JSON.parse(json);
       clearGrid(coord);
       for (let subkey in pixelData) {

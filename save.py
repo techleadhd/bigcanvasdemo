@@ -12,7 +12,7 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 key = sys.argv[1] + ',' + sys.argv[2]
-filename = 'tmp/' + key
+filename = sys.argv[3]
 
 f = open(filename, 'r')
 value = "\n".join(f.readlines())

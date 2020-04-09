@@ -19,13 +19,13 @@ if ($_REQUEST['submit']) {
 
   # Save to file.
   $key = "$x,$y";
-  $filename = "tmp/" . $key;
+  $filename = "tmp/" . $key . '-' . rand()%100;
   file_put_contents($filename, json_encode($data));
 
   # Send to firestore.
-  $result = trim(shell_exec("python save.py '$x' '$y' 2>&1"));
+  $result = trim(shell_exec("python save.py '$x' '$y' '$filename' 2>&1"));
   if ($result != 1) {
-    die("Error saving. $result");
+    die("Error saving. $result<HR>");
   }
 
   print "<script>window.location = 'index.php';</script>";

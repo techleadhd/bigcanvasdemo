@@ -86,6 +86,7 @@ $(document).ready(function () {
 
     $.post('draw.php?submit=1', data, function (rsp) {
       $('body').append(rsp);
+      $("#saveButton").attr('disabled', false);
     });
   }
   window.PICKR = PICKR;

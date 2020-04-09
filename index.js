@@ -35,6 +35,8 @@ $(document).ready(function () {
       for (let subkey in pixelData) {
         let subcoord = subkey.split(",");
         let color = pixelData[subkey];
+	if(color == '#2') color = '#222244'; // hack to save some space on encoding.
+
         fillPixel(coord, subcoord, color);
       }
     }

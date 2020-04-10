@@ -23,6 +23,19 @@ $(document).ready(function () {
     ctx.stroke();
   }
 
+  // firefox canvas mousedown fix
+  let firefoxmd = false;
+
+  window.addEventListener('mousedown', e => {
+      firefoxmd = true;
+  });
+    
+  window.addEventListener('mouseup', e => {
+      if (firefoxmd === true) {
+          firefoxmd = false;
+      }
+  });
+
   canvas.on('mousemove touchmove touchstart mousedown', mouseFill);
   function mouseFill(e) {
     e.preventDefault(); // Disables scrolling for touch events.
@@ -34,6 +47,7 @@ $(document).ready(function () {
     var offsetY = touchstart ? e.targetTouches[0].pageY - rect.offset().top : e.offsetY;
 
     if (!enabled) return;
+    if (!firefoxmd) return;
     if (e.which != 1 && !touchstart) return;
 
     pixel = [Math.floor(offsetX / PIXELSIZE), Math.floor(offsetY / PIXELSIZE)];

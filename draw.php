@@ -35,24 +35,11 @@ if ($_REQUEST['submit']) {
 print <<<EOF
 <!doctype html>
 <html>
-<style>
-    body {
-        margin: 30px;
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #f0f0f0;
-    }
-
-    #mycanvas {
-        margin-top: 8px;
-        border: 1px #000 solid;
-        background-color: #fff;
-    }
-</style>
-
 <body>
     <script>
         let DIMENSION = $DIMENSION;
     </script>
+    <link rel="stylesheet" type="text/css" href="index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="pickr/dist/themes/classic.min.css" />
     <!-- 'classic' theme -->
@@ -60,24 +47,36 @@ print <<<EOF
     <script src="draw.js?version=$VERSION"></script>
 
     <body>
-        <input onclick="window.location='index.php'" value="Back" type=button>
-        <BR>
-        <BR>
-        <table>
-            <tr>
-                <Td>
-                    <div id=picker></div>
-                </td>
-                <td>
-                    <input type=button value="Choose Color" onclick="PICKR.show()" />
-                </td>
-            </tr>
-        </table>
-        <div>
-            <canvas id=mycanvas width=500 height=500></canvas>
+        <div class="headbar">
+            <br>
+            <h2>
+                Big Canvas Demo
+            </h2>
+            <br>
         </div>
-        <input id=saveButton type=submit value=Save onclick="save($x, $y)">
-        <div id=spinner></div>
+        <br>
+        <input onclick="window.location='index.php'" value="Back" type=button style="margin-left: 20pt;">
+        <br>
+        <br>
+        <br>
+        <center>
+            <div>
+                <canvas id=mycanvas width=500 height=500 style="float: left; margin-left: 50pt;"></canvas>
+            </div>
+            <table>
+                <tr>
+                    <Td>
+                        <div id=picker></div>
+                    </td>
+                    <td>
+                        <input id="chose_color" type=button value="Choose Color" onclick="PICKR.show()"  style="margin-top: 100pt;"/>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <input id=saveButton type=submit value=Save onclick="save($x, $y)">
+            <div id=spinner></div>
+        </center>
     </body>
 </html>
 EOF;

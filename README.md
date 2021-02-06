@@ -2,7 +2,7 @@
 Multiplayer drawing web app (similar to the "Million Dollar Homepage" or Reddit's "Place") in Javascript, Firebase, PHP, Python, and Linux/Apache.
 
 YouTube video walkthrough: <a href=https://youtu.be/t1aXuJkmTg8>https://youtu.be/t1aXuJkmTg8</a><BR>
-Demo: http://bigcanvasdemo.com/
+Demo: http://techleadpro.com/bigcanvas/
 
 Looking for more coding tips?
 Join ex-Google/ex-Facebook engineers at http://coderpro.com for 100+ coding video explanations for Google, Facebook, and FANG companies.
